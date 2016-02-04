@@ -16,7 +16,7 @@ else
     hmac=`printf "%s" "$keys" | awk -F " " 'FNR == 2 {print $2}'`
 
     printf "\nCommand to update %s.%s:\n" "$1" "$mydomain"
-    printf "fwknop -A tcp/22 -s -D %s --key-base64-rijndael %s --key-base64-hmac %s\n" "$mydomain" "$key" "$hmac"
+    printf "fwknop -A tcp/22 -s -D ns1.%s --key-base64-rijndael %s --key-base64-hmac %s\n" "$mydomain" "$key" "$hmac"
 
 fi
 
